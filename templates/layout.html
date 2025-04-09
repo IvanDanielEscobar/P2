@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mi Curriculum Online">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Ivan Escobar">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+    <h1>Mi Currículum</h1>
+    <nav>
+        <ul>
+            <p><strong>Menú</strong></p>
+            <li><a href="{{ url_for('datos_personales')}}">Datos Personales</a></li>
+            <li><a href="{{ url_for('contacto')}}">Datos de Contacto</a></li>
+            <li><a href="{{ url_for('redes_sociales')}}">Redes Sociales</a></li>
+            <li><a href="{{ url_for('idiomas')}}">Idiomas</a></li>
+            <li><a href="{{ url_for('intereses')}}">Intereses</a></li>
+            <li><a href="{{ url_for('sobre_mi')}}">Sobre Mí</a></li>
+            <li><a href="{{ url_for('experiencia')}}">Experiencia Profesional</a></li>
+            <li><a href="{{ url_for('educacion')}}">Educación</a></li>
+            <li><a href="{{ url_for('habilidades')}}">Habilidades</a></li>
+            <li><a href="{{ url_for('cursos')}}">Cursos</a></li>
+            <li><a href="{{ url_for('referencias')}}">Referencias</a></li>
+        </ul>
+    </nav>
+</body>
+<footer>
+    <p>Mis redes:</p>
+    <ul>
+        <li><a href="https://github.com/IvanDanielEscobar" target="_blank">Mi GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ivan-daniel-escobar-55493a186/" target="_blank">Mi LinkedIn</a></li>
+    </ul>
+</footer>
+</html>
