@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Currículum Vitae de Ivan Escobar">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Desarrollo Web, Programación, Río Cuarto">
-    <meta name="author" content="Ivan Escobar">
-    <title>Ivan Escobar - Idiomas</title>
-</head>
-<body>
-    <header>
-        <h1>Idiomas</h1>
-    </header>
-    <main>
-        <section>
-            <ul>
-                <li>Español</li>
-            </ul>
-        </section>
-    </main>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block tittle %}
+Ivan Escobar - Idiomas
+{% endblock%}
+
+{% block body %}
+<header>
+    <h1>Idiomas</h1>
+</header>
+<main>
+    <section>
+        <ul>
+            <li>Español</li>
+        </ul>
+    </section>
+</main>
+{% endblock %}

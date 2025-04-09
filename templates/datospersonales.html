@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'layout.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Currículum Vitae de Ivan Escobar">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Ivan Escobar">
-    <title>Ivan Escobar - Datos Personales</title>
-</head>
+{% block tittle %} 
+Ivan Escobar - Datos Personales 
+{% endblock %}
 
-<body>
-    <main>
-        <section>
-            <img src="../media/img/mifoto.jpg" alt="Foto personal" width="150">
-            <p><strong>Nombre:</strong> Ivan Daniel Escobar</p>
-            <p><strong>Fecha de Nacimiento:</strong> 15/07/1999</p>
-            <p><strong>Dirección:</strong> Pasaje Obregon 597, Rio Cuarto, Cordoba, Argentina</p>
-            <p><strong>Disponibilidad horaria:</strong> Full Time</p>
-        </section>
-    </main>
-</body>
-
-</html>
+{% block body %}
+<main>
+    <h1>Datos Personales</h1>
+    <section>
+        <img src="{{ url_for('static', filename='img/mifoto.jpg') }}"> {# le dice que genere una url para la foto ubicada en la carpeta static/img #}
+        <p><strong>Nombre:</strong> Ivan Daniel Escobar</p>
+        <p><strong>Fecha de Nacimiento:</strong> 15/07/1999</p>
+        <p><strong>Dirección:</strong> Pasaje Obregon 597, Rio Cuarto, Cordoba, Argentina</p>
+        <p><strong>Disponibilidad horaria:</strong> Full Time</p>
+    </section>
+</main>
+{% endblock %}

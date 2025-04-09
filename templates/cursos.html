@@ -1,42 +1,37 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Currículum Vitae de Ivan Escobar">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Ivan Escobar">
-    <title>Ivan Escobar - Cursos</title>
-</head>
-<body>
-    <section>
-        <h1>Cursos</h1>
-        <article>
-            <h2>Curso de Reparacion de PC</h2>
-            <p>Institución: Instituto Tecnologico Rio Cuarto, Año 2019</p>
-        </article>
-    </section>
-    <section>
-        <h3>Otras Capacitaciones</h3>
-        <article>
-            <h4>Taller de Fotografia</h4>
-            <p>Brindado por Valeria Caballero, realizado en Mariquita Sanchez de Thompson en el año 2013</p>
-        </article>
-        <article>
-            <h5>Taller de Economia PErsonal</h5>
-            <p>Brindado por Junior Achievement, realizado en Instituto Superior Jeronimo Luis de Cabrera en el año 2017</p>
-        </article>
-        <article>
-            <h5>Taller de Fotografia Profesional</h5>
-            <p>Brindado por Belen Juarez, realizado en Instituto Tecnologico Rio Cuarto</p>
-        </article>
-        <article>
-            <h5>Carnet de Conducir A3</h5>
-            <p>Vencimiento 04/02/2027</p>
-        </article><article>
-            <h5>Carnet de Conducir B2</h5>
-            <p>Vencimiento 04/02/2027</p>
-        </article>
-    </section>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block tittle%}
+Ivan Escobar - Cursos 
+{%endblock%}
+
+{% block body %}
+<section>
+    <h1>Cursos</h1>
+    <article>
+        <h2>Curso de Reparacion de PC</h2>
+        <p>Institución: Instituto Tecnologico Rio Cuarto, Año 2019</p>
+    </article>
+</section>
+<section>
+    <h3>Otras Capacitaciones</h3>
+    <article>
+        <h4>Taller de Fotografia</h4>
+        <p>Brindado por Valeria Caballero, realizado en Mariquita Sanchez de Thompson en el año 2013</p>
+    </article>
+    <article>
+        <h5>Taller de Economia PErsonal</h5>
+        <p>Brindado por Junior Achievement, realizado en Instituto Superior Jeronimo Luis de Cabrera en el año 2017</p>
+    </article>
+    <article>
+        <h5>Taller de Fotografia Profesional</h5>
+        <p>Brindado por Belen Juarez, realizado en Instituto Tecnologico Rio Cuarto</p>
+    </article>
+    <article>
+        <h5>Carnet de Conducir A3</h5>
+        <p>Vencimiento 04/02/2027</p>
+    </article><article>
+        <h5>Carnet de Conducir B2</h5>
+        <p>Vencimiento 04/02/2027</p>
+    </article>
+</section>
+{% endblock %}

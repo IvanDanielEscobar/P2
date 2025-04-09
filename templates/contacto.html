@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Currículum Vitae de Ivan Escobar">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Ivan Escobar">
-    <title>Ivan Escobar - Datos de Contacto</title>
-</head>
-<body>
-    <header>
-        <h1>Datos de Contacto</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Datos de Contacto</h2>
-            <ul>
-                <li>Telefono: +543586000456</li>
-                <li>Email: i.escobar@itecriocaurto.org.ar</li>
-                <li><a href="https://www.instagram.com/ivan.escobar.tfr/" target="_blank">Instagram</a></li>
-                <li><a href="https://www.facebook.com/ivan.escobar.5621thub.com" target="_blank">Facebook</a></li>
-                <li><a href="https://x.com/ivanescobar_tfr" target="_blank">X</a></li>
-            </ul>
-        </section>
-    </main>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block tittle %}
+Ivan Escobar - Datos de Contacto
+{% endblock %}
+
+{% block body %}
+<main>
+    <h1>Datos de Contacto</h1>
+    <section>
+        <ul>
+            <li>Telefono: +543586000456</li>
+            <li>Email: i.escobar@itecriocaurto.org.ar</li>
+            <li><a href="https://www.instagram.com/ivan.escobar.tfr/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/ivan.escobar.5621thub.com" target="_blank">Facebook</a></li>
+            <li><a href="https://x.com/ivanescobar_tfr" target="_blank">X</a></li>
+        </ul>
+    </section>
+</main>
+{% endblock %}

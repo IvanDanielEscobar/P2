@@ -1,53 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Currículum Vitae de Ivan Escobar">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Desarrollo Web, Programación, Río Cuarto">
-    <meta name="author" content="Ivan Escobar">
-    <title>Iván Escobar - Referencias</title>
-</head>
-<body>
-    <header>
-        <h1>Referencias</h1>
-        <script>
-            fetch('../html/menu.html')
-                .then(res => res.text())
-                .then(data => {
-                    document.querySelector('header').insertAdjacentHTML('beforeend', data);
-                });
-        </script>
-    </header>
+{% extends 'layout.html' %}
+
+{% block tittle %}
+Ivan Escobar - Referencias
+{% endblock %}
+
+{% block body %}
 <main>
     <section>
-        <h2>Referencias</h2>
+        <h1>Referencias</h1>
         <article>
-            <h3>Matias Vusurovich</h3>
+            <h2>Matias Vusurovich</h2>
             <p>Puesto: Dueño</p>
             <p>Empresa: Quimica Carnerillo</p>
             <p>Contacto: +5435848277772</p>
         </article>
         <article>
-            <h3>Enrique Brizuela</h3>
+            <h2>Enrique Brizuela</h2>
             <p>Puesto: Representante legal</p>
             <p>Empresa: Instituto Tecnologico Rio Cuarto</p>
             <p>Contacto: +543584643036</p>
         </article>
         <article>
-            <h3>Guillermo Mojica</h3>
+            <h2>Guillermo Mojica</h2>
             <p>Puesto: Supervisor Directo</p>
             <p>Empresa: Correo Oficial de la Republica Argentina S.A.</p>
             <p>Contacto: +543585088304</p>
         </article>
     </section>
 </main>
-    <script>
-        fetch('../html/footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('beforeend', data);
-            });
-    </script>
-</body>
-</html>
+{% endblock %}
