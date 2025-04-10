@@ -6,23 +6,24 @@
     <meta name="description" content="Mi Curriculum Online">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Ivan Escobar">
-    <title>{% block title %} Mi Curriculum {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     <nav>
+        <h3>Mi Curriculum</h3>
         <ul>
-            <p><strong>Menú</strong></p>
-            <li><a href="{{ url_for('datos_personales')}}">Datos Personales</a></li>
-            <li><a href="{{ url_for('contacto')}}">Datos de Contacto</a></li>
-            <li><a href="{{ url_for('redes_sociales')}}">Redes Sociales</a></li>
-            <li><a href="{{ url_for('idiomas')}}">Idiomas</a></li>
-            <li><a href="{{ url_for('intereses')}}">Intereses</a></li>
-            <li><a href="{{ url_for('sobre_mi')}}">Sobre Mí</a></li>
-            <li><a href="{{ url_for('experiencia')}}">Experiencia Profesional</a></li>
-            <li><a href="{{ url_for('educacion')}}">Educación</a></li>
-            <li><a href="{{ url_for('habilidades')}}">Habilidades</a></li>
-            <li><a href="{{ url_for('cursos')}}">Cursos</a></li>
-            <li><a href="{{ url_for('referencias')}}">Referencias</a></li>
+            <li><a href="#datos_personales">Datos Personales</a></li>
+            <li><a href="#contacto">Datos de Contacto</a></li>
+            <li><a href="#redes_sociales">Redes Sociales</a></li>
+            <li><a href="#idiomas">Idiomas</a></li>
+            <li><a href="#intereses">Intereses</a></li>
+            <li><a href="#sobre_mi">Sobre Mi</a></li>
+            <li><a href="#experiencia">Experiencia Profesional</a></li>
+            <li><a href="#educacion">Educacion</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#referencias">Referencias</a></li>
         </ul>
     </nav>
     {% block body %}
