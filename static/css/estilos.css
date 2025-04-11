@@ -78,7 +78,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 .contenedor-datos {
     display: flex; /* ubica todo en fila */
     align-items: center;/* alinea verticalmente el la img y el texto*/
-    gap: 30px; /* espacio entre la imagen y el texto*/
+    gap: 100px; /* espacio entre la imagen y el texto*/
     max-width: 800px;
     margin: 0 auto;
 }
@@ -89,5 +89,13 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
     height: auto;
     border-radius: 20%;
     border: 4px solid #552f2f;
-    flex-shrink: 0;
+    flex-shrink: 0; /* evita que se encoja si no hay espacio */
+}
+
+/* estilo para el texto*/
+.texto-datos p {
+    color: #ffff;
+    background-color: #552f2f;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
