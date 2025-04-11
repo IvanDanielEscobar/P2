@@ -1,14 +1,21 @@
 /* estilo menu de navegacion */
 nav {
     background-color: rgb(0, 8, 80); /* coor de fondo del menu de navegacion */
-    padding: 30px; /*deffine el espaciointerno de todo el nav */
+    padding: 15px 30px; /*deffine el espaciointerno de todo el nav */
+
+    /* flexbox */
+    display: flex; /* convierte el nav en contenedor flex*/
+    align-items: center; /* alinea h3 y ul al centro, si uno es mas alto que el otro se centraran entre si */
+    justify-content: space-between; /* h3 a la izq y ul a la derecha*/ 
 }
 
 /* estilo para el h3 adentro del nav*/
 nav h3 {
     color: #ffff;
-    margin:0 0 10px 7px; /* orden arriba derecha abajo izquierda*/
+    /* quito los margenes para que flex box lo controle dejarlos puede ocacionar errores*/
+    margin: 0; /* orden arriba derecha abajo izquierda */
     padding: 0; /*quito relleno*/
+
 }
 
 /* esstilo para la lista entera */
@@ -21,7 +28,12 @@ nav ul {
 /* estilo para cada li dentro de la ul*/
 nav li {
     display: inline-block; /* para que mi li se ponga en orizontal */
-    margin: 0 10px; /*espacio entre los a de mi lista: 0 arriba ya bajo 10 izq-der */
+    margin: 0 0 0 15px; /*espacio entre los a de mi lista */
+}
+
+nav li:first-child { /* :first-child esta clase se aplica al elemento que viene justo antes (en este caso es li)
+    y añade la codicion seleccionar el elemento(li) solo si es el primer hijo de su elemento padre (ul), es decir, anula su estilo general unicamente al primer elemento */
+    margin-left: 0; /* margin-left quita el margen del primer elemento de la lista*/
 }
 
 /* estilo para los enlaces a dentro de cada li */
