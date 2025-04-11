@@ -1,5 +1,38 @@
-
-nav ul li {
-    display: inline-block; /* Para mostrar los elementos en línea */
-    margin-right: 10px;
+/* estilo menu de navegacion */
+nav {
+    background-color: rgb(0, 8, 80); /* coor de fondo del menu de navegacion */
+    padding: 30px; /*deffine el espaciointerno de todo el nav */
 }
+
+/* estilo para el h3 adentro del nav*/
+nav h3 {
+    color: #ffff;
+    margin:0 0 10px 7px; /* orden arriba derecha abajo izquierda*/
+    padding: 0; /*quito relleno*/
+}
+
+/* esstilo para la lista entera */
+nav ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+/* estilo para cada li dentro de la ul*/
+nav li {
+    display: inline-block; /* para que mi li se ponga en orizontal */
+    margin: 0 10px; /*espacio entre los a de mi lista: 0 arriba ya bajo 10 izq-der */
+}
+
+/* estilo para los enlaces a dentro de cada li */
+nav li a {
+    color: #ffff;
+    text-decoration: none; /* quita el subrayado */
+    font-weight: bold; /* pone el texto en negrita */
+}
+
+/* estilo para nav li a cuando el puntero este encima del enlace*/
+nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elemento */
+    color: rgb(82, 79, 79);
+}
+
