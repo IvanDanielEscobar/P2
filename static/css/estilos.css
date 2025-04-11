@@ -1,3 +1,13 @@
+/*estilo general para mi body */
+body {
+    line-height: 1,6;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(2, 53, 53);
+}
+
+/* estilos seccion nav */
+
 /* estilo menu de navegacion */
 nav {
     background-color: rgb(0, 8, 80); /* coor de fondo del menu de navegacion */
@@ -48,3 +58,36 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
     color: rgb(82, 79, 79);
 }
 
+/* estilos seccion datos personales */
+
+#datos_personales {
+    padding: 30px 20px;
+    margin: 20px;
+    background-color: blue;
+}
+
+/* estilo para el h1 */
+#datos_personales h1 {
+    color: #ffff;
+    margin-top: 0; /*quita el margen superior pordefecto*/
+    margin-bottom: 15px; /* espacio abajo del h1*/
+    text-align: center;
+}
+
+/* estilo para el contenedor principal de datos personales */
+.contenedor-datos {
+    display: flex; /* ubica todo en fila */
+    align-items: center;/* alinea verticalmente el la img y el texto*/
+    gap: 30px; /* espacio entre la imagen y el texto*/
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* estilo para la img dentro del contenedor-datos en datos personales*/
+.contenedor-datos img {
+    max-width: 180px;
+    height: auto;
+    border-radius: 20%;
+    border: 4px solid #552f2f;
+    flex-shrink: 0;
+}
