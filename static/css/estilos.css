@@ -62,7 +62,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 
 #datos_personales {
     padding: 30px 20px;
-    margin: 20px;
+    margin: 20px 15px;
     background-color: blue;
 }
 
@@ -103,6 +103,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 #contacto {
     background-color: rgb(0, 94, 62);
     padding: 30px 20px;
+    margin: 20px 15px;
 }
 
 #contacto h1 {
@@ -134,33 +135,248 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
     text-decoration: none;
 }
 
+#contacto .contacto li a:hover {
+    color: #646464;           
+    text-decoration: underline; 
+}
+
 /* estilos para redes sociales */
 
 #redes_sociales {
-
+    background-color: #1eff00;
+    margin: 20px 15px;
+    padding: 20px 50px;
+    text-align: left;
+    
 }
 
 #redes_sociales h1 {
-
+    color: #ffff;
+    margin-top: 0 0 10px 0;
+    text-align: center;
 }
 
 #redes_sociales p {
-
+    color: #ffff;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #redes_sociales .lista-redes {
-
+    max-width: 200px; /* ancho maximo*/
+    margin: 0 auto;
 }
 
 #redes_sociales .lista-redes ul {
-
+    list-style: none;
+    padding: 0;
+    margin: 0;    
 }
 
 #redes_sociales .lista-redes li {
-
+    margin-bottom: 10px; /*entre cada red social */
+    text-align: center;
 }
 
 #redes_sociales .lista-redes li a {
-
+    color: #ffff;
+    text-decoration: none;
 }
 
+#redes_sociales .lista-redes li a:hover {
+    color: #646464;           
+    text-decoration: underline; 
+}
+
+/*estilos seccion idiomas */
+
+#idiomas {
+    background-color: rgb(73, 6, 6);
+    padding: 30px 20px;
+    margin: 20px 15px;
+    color: #ffff;
+}
+
+#idiomas h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#idiomas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 200px;
+}
+
+#idiomas li {
+    margin-bottom: 10px; /* para separar mas idioma en caso de agregar */
+    text-align: center;
+}
+
+/* estilo seccion intereses */
+
+#intereses {
+    color: #ffff;
+    margin: 20px;
+    padding: 30px 20px;
+    background-color: rgb(7, 49, 54);
+}
+
+#intereses h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#intereses .intereses {
+    margin: 0 auto;
+}
+
+#intereses .intereses ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#intereses .intereses li {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+ /*estilos seccion sobre mi */
+ 
+#sobre_mi {
+    padding: 30px 20px;
+    margin: 20px 10px;
+    background-color: #104909;
+    color: #ffff;
+}
+
+#sobre_mi h1 {
+    margin-top: 0;
+    margin-bottom: 20px; /* espacio antes del parrafo */
+    text-align: center;
+}
+
+#sobre_mi p {
+    margin: 20px 15px;
+    line-height: 1.7; /* altura para el parrafo */
+    margin: 0 auto 30px auto; 
+}
+
+#sobre_mi h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#sobre_mi .album {
+    display: flex; /* flexbox */
+    flex-wrap: wrap; /* para que las imagenes bajen a la suguiente linea si no entran*/
+    justify-content: center; /* imagenes centradas horizontalmente */
+    gap: 15px; /* espacio entre imagenes */
+    padding: 10px 5px;
+}
+
+#sobre_mi .album img {
+    height: 250px;
+    width: auto;
+    display: block;
+}
+
+/* estilos seccion experiencia */
+
+#experiencia {
+    background-color: rgb(6, 61, 61);
+    margin: 20px 15px;
+    padding: 20px;  
+}
+
+#experiencia h1 {
+    color: #ffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* Contenedor de los artículos */
+#experiencia .experiencia { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+
+    /* === Bordes para ver qué pasa (Borrar después) === */
+    border: 3px solid red; /* Borde ROJO alrededor del contenedor grid */
+    padding: 10px; /* Pequeño padding para que se vea bien el borde */
+}
+
+/* Cada artículo individual */
+#experiencia .experiencia article {
+    /* === Bordes para ver qué pasa (Borrar después) === */
+    border: 2px solid blue; /* Borde AZUL alrededor de cada artículo */
+    padding: 15px; /* Padding para ver bien el borde */
+    background-color: #000638; /* Fondo claro para distinguirlos */
+
+    /* Quitamos cualquier estilo previo que pudiera interferir */
+    margin: 0;
+}
+
+#experiencia .experiencia article h2 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #a7a7a7;
+}
+#experiencia .experiencia article p {
+    margin-bottom: 10px;
+    font-size: 1em;
+     color: #c5c5c5;
+}
+#experiencia .experiencia article p:last-of-type {
+     margin-bottom: 0;
+}
+
+/* estilos seccion educacion */
+
+#educacion {
+    padding: 30px 20px;        /* Consistencia con otras secciones */
+    margin: 20px;
+    background-color: rgb(68, 3, 3);
+}
+
+#educacion h1 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;       
+}
+
+/* Aplicamos el MISMO layout Grid que en Experiencia */
+#educacion .educacion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+}
+
+#educacion .educacion article {
+    padding: 20px;
+    background-color: #f9f9f9; /* Fondo claro (o #ffffff si prefieres blanco) */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil */
+}
+
+#educacion .educacion article h2 {
+    font-size: 1.4em;     /* Consistente con Experiencia H2 */
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 8px;  /* Espacio antes del párrafo de institución/fecha */
+}
+
+#educacion .educacion article p {
+    font-size: 1.1em;     /* Consistente con Experiencia P */
+    line-height: 1.6;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 0; /* Es el último elemento dentro del article, quitamos margen inferior */
+}
