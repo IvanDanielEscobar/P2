@@ -1,324 +1,382 @@
-/*estilo general para mi body */
-body {
-    line-height: 1,6;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(2, 53, 53);
+:root {
+    --color-bg-body: rgb(2, 3, 53); /*fondo principal*/
+    --color-bg-nav-footer: rgb(0, 8, 80); /*fondo del nav/footer*/
+    --color-bg-container: #010238; /*fondo del color principal*/
+    --color-bg-card: #05354b; /*fondo de las tarjetas*/
+
+    --color-text-dark: #333333; /*texto principal oscuro*/
+    --color-text-medium: #555555; /*texto secundario oscuro*/
+    --color-text-light: #ffffff; /*texto principal claro*/
+    --color-text-light-medium: #cccccc; /*texto secundario claro*/
+    --color-text-light-soft: #aaaaaa; /*texto mas suave*/
+    --color-text-card-heading: #a7a7a7;
+    --color-text-card-body: #c5c5c5;
+
+    --color-link: #66aaff; /*color de enlaces*/
+    --color-link-hover: #99ccff; /*cpolor de enlaces hover*/
+    --color-border: #1b1b3d; /*color de bordes claros*/
+    --color-border-separator: #1b1b3d; /*color de linea separadora*/
+    --color-shadow: rgba(0, 0, 0, 0.2); /*color base para sombras*/
+
+    --font-family-headings: "DM Serif Text", serif; /*fuente para titulos*/
+    --font-family-base: "Markazi Text", serif; /*fuente para el cuerpo*/
+    --font-size-base: 1.1em; /*tamanio base para parrafos y listas*/
+    --font-size-small: 1em; /*texto un poco mas pequenio*/
+    --font-size-h1: 2em; /*tamanio h1*/
+    --font-size-h2-section: 1.6em; /*tamanio h2*/
+    --font-size-h2-card: 1.3em; /*tamanio h2 dentro de las cajas*/
+    --font-size-h3-section: 1.6em;
+    --font-size-h3-card: 1.2em; /*tamanio h3 y h4 dentro de las tarjetas*/ 
+    --font-height-base: 1.6; /*interlineado base*/
+    --font-height-paragraph: 1.7; /*interlineado para parrafos largos*/
+
+    --spacing-xs: 5px;
+    --spacing-sm: 8px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 25px;
+    --spacing-xxl: 30px;
+    --spacing-section-v: 30px;  /* Padding vertical de sección */
+    --spacing-section-h: 20px;  /* Padding horizontal de sección */
+    --gap-grid: 20px;        /* Gap para grids */
+    --spacing-section-v: var(--spacing-xxl); /* 30px */
+    --spacing-section-h: var(--spacing-lg); /* 20px */
+    --gap-grid: var(--spacing-xl);  /* 25px */
+    --gap-grid-skills: var(--spacing-xxl);  /* 30px */
+
+    --line-height-base: 1.6;        /* Interlineado base (1.6 veces el tamaño de fuente) */
+    --line-height-paragraph: 1.7;   /* Interlineado un poco mayor para párrafos largos */
+    
+    /* Layout */
+    --container-max-width: 1140px;    /* Ancho máximo del contenedor principal */
+    --container-padding-h: var(--spacing-lg); /* 20px */
+    --container-padding-v: var(--spacing-xxl); /* 30px */
+
+    /* Bordes y Sombras */
+    --border-radius-card: 8px;        /* Radio de borde para tarjetas */
+    --border-card: 1px solid var(--color-border); /* Borde estándar de tarjeta */
+    --box-shadow-card: 0 2px 5px var(--color-shadow); /* Sombra estándar tarjeta */
 }
 
+/*estilo general para mi body */
+body {
+    line-height: var(--line-height-base);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg-body);
+    font-family: var(--font-family-base);
+    color: var(--color-text-light-medium);
+}
 /* estilos seccion nav */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-headings);
+    margin-top: 0;
+}
+.contenedor-body {
+    width: 100%; /* Asegura que use el ancho disponible hasta el máximo */
+    max-width: var(--container-max-width); /* Ancho máximo del contenido (puedes ajustar este valor: 1000px, 1200px...) */
+    margin-left: auto;  /* Centra el contenedor horizontalmente */
+    margin-right: auto; /* Centra el contenedor horizontalmente */
+    padding-left: var(--container-padding-h); /* Espacio interno para que el contenido no toque los bordes */
+    padding-right: var(--container-padding-h);/* Espacio interno para que el contenido no toque los bordes */
+    padding-bottom: var(--container-padding-v);
+    background-color: --color-bg-container; /* Fondo  para el contenido */
+    color: var(--color-text-light); /* Color de texto por defecto para TODO dentro del contenedor */
+    box-shadow: var(--varbox-shadow-container);
+    border-radius: var(--border-radius-card);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/*estilos base para las secciones */
+section {
+    padding-top: var(--spacing-section-v);
+    padding-bottom: var(--spacing-section-v);
+    margin: 0;
+    border-top: 1px solid var(--color-border-separator);
+}
+
+section:first-of-type {
+    border-top: none; /*no poner borde a la primera seccion */
+}
+
+/*estilo base para h1 dentro de cualquier seccion */
+/* > para seleccionar solo el h1 principal de la seccion */
+section > h1 {
+    font-size: var(--font-size-h1);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
 
 /* estilo menu de navegacion */
 nav {
-    background-color: rgb(0, 8, 80); /* coor de fondo del menu de navegacion */
-    padding: 15px 30px; /*deffine el espaciointerno de todo el nav */
-
+    background-color: var(--color-bg-nav-footer); /* coor de fondo del menu de navegacion */
+    padding: var(--spacing-md) var(--spacing-xxl); /*deffine el espaciointerno de todo el nav */
     /* flexbox */
     display: flex; /* convierte el nav en contenedor flex*/
     align-items: center; /* alinea h3 y ul al centro, si uno es mas alto que el otro se centraran entre si */
     justify-content: space-between; /* h3 a la izq y ul a la derecha*/ 
 }
-
 /* estilo para el h3 adentro del nav*/
 nav h3 {
-    color: #ffff;
+    color: var(--color-text-light);
     /* quito los margenes para que flex box lo controle dejarlos puede ocacionar errores*/
     margin: 0; /* orden arriba derecha abajo izquierda */
     padding: 0; /*quito relleno*/
-
+    font-size: 1.5em;
 }
-
 /* esstilo para la lista entera */
 nav ul {
     list-style: none; 
     margin: 0;
     padding: 0;
 }
-
 /* estilo para cada li dentro de la ul*/
 nav li {
-    display: inline-block; /* para que mi li se ponga en orizontal */
-    margin: 0 0 0 15px; /*espacio entre los a de mi lista */
+    display: inline-block; /* para que mi li se ponga en horizontal */
+    margin: 0 0 0 var(--spacing-md); /*espacio entre los a de mi lista */
 }
-
 nav li:first-child { /* :first-child esta clase se aplica al elemento que viene justo antes (en este caso es li)
     y añade la codicion seleccionar el elemento(li) solo si es el primer hijo de su elemento padre (ul), es decir, anula su estilo general unicamente al primer elemento */
     margin-left: 0; /* margin-left quita el margen del primer elemento de la lista*/
 }
-
 /* estilo para los enlaces a dentro de cada li */
 nav li a {
-    color: #ffff;
+    color: var(--color-text-light);
     text-decoration: none; /* quita el subrayado */
     font-weight: bold; /* pone el texto en negrita */
 }
-
 /* estilo para nav li a cuando el puntero este encima del enlace*/
 nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elemento */
-    color: rgb(82, 79, 79);
+    color: var(--color-text-light-medium);
 }
 
 /* estilos seccion datos personales */
-
 #datos_personales {
-    padding: 30px 20px;
-    margin: 20px 15px;
-    background-color: blue;
+    padding: var(--spacing-section-v) var(--spacing-section-h);
+    margin: 0;
+    border-top: none;
 }
-
-/* estilo para el h1 */
-#datos_personales h1 {
-    color: #ffff;
-    margin-top: 0; /*quita el margen superior pordefecto*/
-    margin-bottom: 15px; /* espacio abajo del h1*/
-    text-align: center;
-}
-
 /* estilo para el contenedor principal de datos personales */
 .contenedor-datos {
     display: flex; /* ubica todo en fila */
     align-items: center;/* alinea verticalmente el la img y el texto*/
-    gap: 100px; /* espacio entre la imagen y el texto*/
+    gap: var(--spacing-xxl); /* espacio entre la imagen y el texto*/
     max-width: 800px;
     margin: 0 auto;
 }
-
 /* estilo para la img dentro del contenedor-datos en datos personales*/
 .contenedor-datos img {
     max-width: 180px;
     height: auto;
     border-radius: 20%;
+    border: 3px solid var(--color-text-light-soft);
     flex-shrink: 0; /* evita que se encoja si no hay espacio */
 }
-
 /* estilo para el texto*/
 .texto-datos p {
-    color: #ffff;
-    margin-top: 0;
-    margin-bottom: 12px;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+}
+.texto-datos:last-child {
+    margin-bottom: 0; /*quita el margen solo al ultimo elemento */
 }
 
 /* estilos seccion contacto */
-
 #contacto {
-    background-color: rgb(0, 94, 62);
-    padding: 30px 20px;
-    margin: 20px 15px;
-}
-
-#contacto h1 {
-    color: #ffff;
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-align: center;
+    padding: var(--spacing-section-v) var(--spacing-section-h);
+    margin: 0;
+    border-top: 1px solid var(--color-border-separator);
 }
 #contacto .contacto {
     max-width: 500px;
     margin: 0 auto;
+    display: flex;
 }
-
 #contacto .contacto ul {
     list-style: none;
     padding: 0;
     margin: 0;
-
 }
-
 #contacto .contacto li {
-    color: #ffff;
-    margin-bottom: 15px;
-    text-align: left; 
+    display: inline-block; /* para que mi li se ponga en horizontal */
+    margin: 0 0 0 var(--spacing-md); /*espacio entre los a de mi lista */
+    color: var(--color-link);
+    font-size: var(--font-size-base);
+    text-align: center;
 }
-
+#contacto .contacto li:first-child {
+    margin-left: 0;
+}
 #contacto .contacto li a {
-    color: #ffff;
+    color: var(--color-text-light);
     text-decoration: none;
 }
-
 #contacto .contacto li a:hover {
-    color: #646464;           
+    color: var(--color-link-hover);           
     text-decoration: underline; 
 }
 
 /* estilos para redes sociales */
-
 #redes_sociales {
-    background-color: #1eff00;
-    margin: 20px 15px;
-    padding: 20px 50px;
-    text-align: left;
-    
+    margin: 0;
+    padding: var(--spacing-section-v)var(--spacing-section-h);   
+    border-top: 1px solid var(--color-border-separator); 
 }
-
-#redes_sociales h1 {
-    color: #ffff;
-    margin-top: 0 0 10px 0;
-    text-align: center;
+.redes-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
 }
-
-#redes_sociales p {
-    color: #ffff;
-    text-align: center;
-    margin-bottom: 20px;
+#redes_sociales > p {
+    color: var(--color-text-light);
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-base);
 }
-
-#redes_sociales .lista-redes {
-    max-width: 200px; /* ancho maximo*/
-    margin: 0 auto;
-}
-
 #redes_sociales .lista-redes ul {
     list-style: none;
     padding: 0;
-    margin: 0;    
+    margin: 0;
+    white-space: nowrap; /*evita que la lista se separe si falta espacio*/
 }
-
 #redes_sociales .lista-redes li {
-    margin-bottom: 10px; /*entre cada red social */
-    text-align: center;
+    display: inline-block;
+    margin: 0 0 0 var(--spacing-sm); /*entre cada red social */
 }
-
+#redes_socuales .lista-redes li:last-child {
+    margin-left: 0;
+}
 #redes_sociales .lista-redes li a {
-    color: #ffff;
+    color: var(--color-link);
     text-decoration: none;
+    font-size: var(--font-size-base);
 }
-
 #redes_sociales .lista-redes li a:hover {
-    color: #646464;           
+    color: var(--color-link-hover);
     text-decoration: underline; 
 }
 
 /*estilos seccion idiomas */
 
 #idiomas {
-    background-color: rgb(73, 6, 6);
-    padding: 30px 20px;
-    margin: 20px 15px;
-    color: #ffff;
-}
-
-#idiomas h1 {
-    margin-top: 0;
-    margin-bottom: 25px;
+    padding: var(--spacing-section-v)var(--spacing-section-h);
+    margin: 0;
+    border-top: 1px solid var(--color-border-separator);
+    color: var(--color-text-light);
     text-align: center;
 }
-
 #idiomas ul {
     list-style: none;
     padding: 0;
     margin: 0 auto;
     max-width: 200px;
 }
-
 #idiomas li {
-    margin-bottom: 10px; /* para separar mas idioma en caso de agregar */
-    text-align: center;
+    display: inline-block;
+    margin-bottom: var(--spacing-sm); /* para separar mas idioma en caso de agregar */
+    margin: 0 var(--spacing-md);
+    font-size: var(--font-family-base);
 }
 
 /* estilo seccion intereses */
-
 #intereses {
-    color: #ffff;
-    margin: 20px;
-    padding: 30px 20px;
-    background-color: rgb(7, 49, 54);
-}
-
-#intereses h1 {
-    margin-top: 0;
-    margin-bottom: 25px;
+    padding: var(--spacing-section-v)var(--spacing-section-h);
+    margin: 0;
+    border-top: 1px solid var(--color-border-separator);
+    color: var(--color-text-light);
     text-align: center;
 }
-
-#intereses .intereses {
-    margin: 0 auto;
-}
-
-#intereses .intereses ul {
+#intereses ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
-#intereses .intereses li {
-    margin-bottom: 10px;
-    text-align: center;
+#intereses li {
+    font-size: var(--font-family-base);
+    display: inline-block;
+    margin: 0 var(--spacing-md);
+    font-size: var(--font-family-base);
 }
 
  /*estilos seccion sobre mi */
- 
 #sobre_mi {
-    padding: 30px 20px;
-    margin: 20px 10px;
-    background-color: #104909;
-    color: #ffff;
+    padding: var(--spacing-section-v)var(--spacing-section-h);
+    margin: 0;
+    border-top: 1px solid var(--color-border-separator);
+    color: var(--color-text-light);
 }
-
-#sobre_mi h1 {
-    margin-top: 0;
-    margin-bottom: 20px; /* espacio antes del parrafo */
+.contenedor-sobremi h2{
+    margin: 0 auto;
     text-align: center;
 }
-
 #sobre_mi p {
-    margin: 20px 15px;
-    line-height: 1.7; /* altura para el parrafo */
-    margin: 0 auto 30px auto; 
-}
-
-#sobre_mi h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
+    line-height: var(--line-height-paragraph);
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-xxl) auto;
     text-align: center;
+    font-size: var(--font-family-base);
 }
-
 #sobre_mi .album {
     display: flex; /* flexbox */
     flex-wrap: wrap; /* para que las imagenes bajen a la suguiente linea si no entran*/
     justify-content: center; /* imagenes centradas horizontalmente */
-    gap: 15px; /* espacio entre imagenes */
-    padding: 10px 5px;
+    gap: var(--spacing-md); /* espacio entre imagenes */
+    padding: var(--spacing-sm) 0;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-#sobre_mi .album img {
-    height: 250px;
-    width: auto;
+#sobre_mi .album a {
     display: block;
+    line-height: 0;
+    text-decoration: none;
+}
+#sobre_mi .album img {
+    height: 180px;
+    width: auto;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--box-shadow-card);
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+#sobre_mi .album a:hover img {
+    opacity: 0.8;
 }
 
 /* estilos seccion experiencia */
 
 #experiencia {
-    background-color: rgb(6, 61, 61);
-    margin: 20px 15px;
-    padding: 20px;  
+    margin: 0;
+    padding: var(--spacing-section-v)var(--spacing-section-h);  
+    border-top: 1px solid var(--color-border-separator);
 }
 
 #experiencia h1 {
-    color: #ffff;
+    color: var(--color-text-light);
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-lg);
     text-align: center;
 }
 /* Contenedor de los artículos */
 #experiencia .experiencia { 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-
-    /* === Bordes para ver qué pasa (Borrar después) === */
-    border: 3px solid red; /* Borde ROJO alrededor del contenedor grid */
-    padding: 10px; /* Pequeño padding para que se vea bien el borde */
+    gap: var(--gap-grid);
+    padding: var(--spacing-sm); /* Pequeño padding para que se vea bien el borde */
 }
 
 /* Cada artículo individual */
 #experiencia .experiencia article {
-    /* === Bordes para ver qué pasa (Borrar después) === */
-    border: 2px solid blue; /* Borde AZUL alrededor de cada artículo */
-    padding: 15px; /* Padding para ver bien el borde */
-    background-color: #000638; /* Fondo claro para distinguirlos */
-
-    /* Quitamos cualquier estilo previo que pudiera interferir */
+    padding: var(--spacing-md); /* Padding para ver bien el borde */
+    background-color: var(--color-bg-card); /* Fondo claro para distinguirlos */
     margin: 0;
 }
 
@@ -341,7 +399,6 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 #educacion {
     padding: 30px 20px;        
     margin: 20px;
-    background-color: rgb(68, 3, 3);
 }
 
 #educacion h1 {
@@ -360,21 +417,20 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 
 #educacion .educacion article {
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #05354b;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil */
 }
 
 #educacion .educacion article h2 {
-    color: #444;
+    color: #a7a7a7;
     margin-top: 0;
     margin-bottom: 8px;  /* Espacio antes del párrafo de institución/fecha */
 }
 
 #educacion .educacion article p {
     line-height: 1.6;
-    color: #555;
+    color: #c5c5c5;
     margin-top: 0;
     margin-bottom: 0; /* Es el último elemento dentro del article, quitamos margen inferior */
 }
@@ -384,7 +440,6 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 #habilidades {
     padding: 30px 20px;
     margin-top: 20px;
-    background-color: #444;
 }
 
 #habilidades h1 {
@@ -397,7 +452,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 
 /* estilo para el (.contenedor-habilidades) */
 /* Este div envuelve las dos columnas (técnicas y blandas) */
-.contenedor-habilidades { 
+#habilidades .contenedor-habilidades { 
     display: grid;
     grid-template-columns: 1fr 1fr; /* Crea dos columnas de igual ancho */
     /* Alternativa responsiva: si una columna no cabe, pasa abajo */
@@ -406,21 +461,19 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
     margin-top: 15px; /* Espacio opcional después del H1 general */
 }
 /* Les damos un estilo tipo "tarjeta" similar a Educación/Experiencia */
-.habilidades-tecnicas,
-.habilidades-blandas {
-    background-color: #f9f9f9;
+#habilidades .habilidades-tecnicas, .habilidades-blandas {
+    background-color: #05354b;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #eee;
 }
 
 /* 5. Estilo para los títulos H2 de cada categoría */
 #habilidades h2 { /* Estilo común para Habilidades Técnicas y Blandas */
     font-size: 1.4em;
-    color: #444;
+    color: #a7a7a7;
     margin-top: 0;
     margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #1b1b3d;
     padding-bottom: 8px;
 }
 
@@ -436,7 +489,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 /* 7. Estilo para los items LI */
 #habilidades li {
     font-size: 1.1em;
-    color: #555;
+    color: #c5c5c5;
     margin-bottom: 12px;
     line-height: 1.5;
     /* Opcional: Estilo con pseudo-elemento para viñeta personalizada */
@@ -453,7 +506,6 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 #cursos {
     padding: 30px 20px;
     margin-top: 20px;
-    border-top: 1px solid #eee;
 }
 
 #cursos h1 {
@@ -465,9 +517,8 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 }
 
 #cursos .cursos article {
-    background-color: #fefefe;
+    background-color: #05354b;
     padding: 20px;
-    border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin-bottom: 35px;
     max-width: 700px;
@@ -477,7 +528,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 
 #cursos .cursos article h2 {
     font-size: 1.4em;
-    color: #444;
+    color: #a7a7a7;
     margin-top: 0;
     margin-bottom: 8px;
 }
@@ -486,7 +537,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 
 #cursos > h3 {
     font-size: 1.6em;
-    color: #ffffff;
+    color: #c5c5c5;
     text-align: center;
     margin-top: 0;
     margin-bottom: 25px;
@@ -500,8 +551,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 
 #cursos .capacitaciones article {
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #05354b;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     display: flex;
@@ -510,7 +560,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 
 #cursos .capacitaciones article h4 { 
     font-size: 1.2em;
-    color: #444;
+    color: #a7a7a7;
     margin-top: 0;
     margin-bottom: 8px;
     flex-grow: 0;
@@ -520,7 +570,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 #cursos article p {
     font-size: 1em;
     line-height: 1.6;
-    color: #555;
+    color: #c5c5c5;
     margin-top: 0;
     margin-bottom: 0;
     flex-grow: 1;
@@ -533,7 +583,6 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
     margin: 20px;
     /* Añadir más espacio abajo ya que es la última sección */
     padding-bottom: 50px;
-    background-color: #000638;
 }
 
 #referencias h1 {
@@ -555,15 +604,14 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 /* Aplicamos el MISMO estilo de tarjeta */
 #referencias .referencias article {
     padding: 20px;
-    background-color: #064b09;
-    border: 1px solid #ddd;
+    background-color: #05354b;  
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     /* display: flex; flex-direction: column; */ /* Opcional para igualar altura */
 }
 
 #referencias .referencias article h2 {
-    color: #ffffff;
+    color: #a7a7a7;
     margin-top: 0;
     margin-bottom: 12px; /* Espacio antes de los detalles */
 }
@@ -571,7 +619,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 /* 6. Estilo para los párrafos P (Detalles) */
 #referencias .referencias article p {
     line-height: 1.5;     /* Ligeramente menos espaciado que párrafos largos */
-    color: #eeeeee;
+    color: #c5c5c5;
     margin-top: 0;
     margin-bottom: 8px;  /* Espacio entre líneas de detalle */
 }
@@ -582,7 +630,7 @@ nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elem
 
 /* estilo para las etiquetas <strong> */
 #referencias .referencias article p strong {
-    color: #bebebe; /* Un poco más oscuro */
+    color: #a7a7a7; /* Un poco más oscuro */
     margin-right: 5px; /* Espacio después de los dos puntos */
     font-weight: 600; 
 }

@@ -1,3 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block tittle %}
+Datos Personales - Ivan Escobar
+{% endblock %}
+
+{% block body %}
 <h1>Datos Personales</h1>    
 <div class="contenedor-datos">
     <img src="{{ url_for('static', filename='img/mifoto.jpg') }}"> {# le dice que genere una url para la foto ubicada en la carpeta static/img #}
@@ -8,3 +15,4 @@
         <p><strong>Disponibilidad horaria:</strong> Full Time</p>
     </div>
 </div>
+{% endblock %}

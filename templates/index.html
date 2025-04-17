@@ -3,11 +3,16 @@
 {% block title %}
     Ivan Escobar - Curriculum Vitae
 {% endblock %}
-
+{% block menu %}
+<section id="menu">
+    {% include 'menu.html' %} 
+</section>
+{% endblock %}
 {% block body %}
 <section id="datos_personales">
     {% include 'datos_personales.html' %}
 </section>
+
 <section id="contacto">
     {% include 'contacto.html' %}
 </section>
@@ -47,5 +52,4 @@
 <section id="referencias">
     {% include 'referencias.html' %}
 </section>
-
 {% endblock %}

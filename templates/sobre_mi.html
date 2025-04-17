@@ -1,22 +1,53 @@
-<h1>Sobre Mi</h1>
-<p>
-    ¡Hola! Soy Iván Escobar, tengo 25 años y soy de Río Cuarto, Córdoba, Argentina.
-    Trabajo en el Correo Oficial de la República Argentina S.A. en la parte operativa y,
-    estoy estudiando en el ITEC para seguir creciendo. Me gustan los desafíos
-    y siempre busco aprender cosas nuevas. En mi tiempo libre mis aficiones son el futbol
-    y los videojuegos. Tengo dos compañeros de vida un perro y un gato ambos cahorros.
-</p>
 
-<h2>Mi álbum personal</h2>
-<div class="album">
-    <img src="{{ url_for('static', filename='sobre_mi/alianza1.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/alianza2.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/alianza3.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/alianza4.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/alianza5.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/corcho1.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/corchoymushu1.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/cuyo1.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/cuyo2.jpg') }}"> 
-    <img src="{{ url_for('static', filename='sobre_mi/foecyt1.jpg') }}"> 
+{% extends 'layout.html' %}
+
+{% block tittle %}
+Ivan Escobar - Intereses
+{% endblock %}
+
+{% block body %}
+<h1>Sobre Mi</h1>
+<div class="contenedor-sobremi">
+    <p>
+        ¡Hola! Soy Iván Escobar, tengo 25 años y soy de Río Cuarto, Córdoba, Argentina.
+        Trabajo en el Correo Oficial de la República Argentina S.A. en la parte operativa y,
+        estoy estudiando en el ITEC para seguir creciendo. Me gustan los desafíos
+        y siempre busco aprender cosas nuevas. En mi tiempo libre mis aficiones son el futbol
+        y los videojuegos. Tengo dos compañeros de vida un perro y un gato ambos cahorros.
+    </p>
+    <h2>Mi álbum personal</h2>
+
+    <div class="album">
+        <a href="{{ url_for('static', filename='sobre_mi/alianza1.jpg') }}" target="_self">
+            <img src="{{ url_for('static', filename='sobre_mi/alianza1.jpg')}}">
+        </a>
+        <a href="{{ url_for('static', filename='sobre_mi/alianza2.jpg') }}" target="_self">
+            <img src="{{ url_for('static', filename='sobre_mi/alianza2.jpg')}}">
+        </a>
+        <a href="{{ url_for('static', filename='sobre_mi/alianza3.jpg') }}" target="_self"> 
+            <img src="{{ url_for('static', filename='sobre_mi/alianza3.jpg') }}">
+        </a>
+        <a href="{{ url_for('static', filename='sobre_mi/alianza4.jpg') }}" target="_self"> 
+            <img src="{{ url_for('static', filename='sobre_mi/alianza4.jpg') }}">
+        </a>
+        <a href="{{ url_for('static', filename='sobre_mi/alianza5.jpg') }}" target="_self"> 
+            <img src="{{ url_for('static', filename='sobre_mi/alianza5.jpg') }}">
+        </a>
+        <a href="{{ url_for('static', filename='sobre_mi/corcho1.jpg') }}" target="_self"> 
+            <img src="{{ url_for('static', filename='sobre_mi/corcho1.jpg') }}"> 
+        </a>
+        <a href="{{ url_for('static', filename='sobre_mi/corchoymushu1.jpg') }}" target="_self">
+            <img src="{{ url_for('static', filename='sobre_mi/corchoymushu1.jpg') }}"> 
+        </a>    
+        <a href="{{ url_for('static', filename='sobre_mi/cuyo1.jpg') }}" target="_self">
+            <img src="{{ url_for('static', filename='sobre_mi/cuyo1.jpg') }}"> 
+        </a>
+        <a href="{{ url_for('static', filename='sobre_mi/cuyo2.jpg') }}" target="_self">
+            <img src="{{ url_for('static', filename='sobre_mi/cuyo2.jpg') }}"> 
+        </a>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
+
 </div>
+</div>
+
+{% endblock %}

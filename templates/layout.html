@@ -1,39 +1,56 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mi Curriculum Online">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Ivan Escobar">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Mi Curriculum Online">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Ivan Escobar">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha512-NVt7pmp2VRंशिकvkYAkwn+37G4wnpGDN6cVYZtVNXknnQJsKQrEUoLpHHC2m4cURwEszQIlN05G6zh7PyM1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
         <title>{% block title %}Mi curriculum{% endblock %}</title>
-</head>
-<body>
-    <nav>
-        <h3>Mi Curriculum</h3>
+    </head>
+    <body id="inicio">
+        <nav>
+            <h3>Mi Curriculum</h3>
+            <ul>
+                <li><a href="{{ url_for('datos_personales')}}">Datos Personales</a></li>
+                <li><a href="{{ url_for('contacto')}}">Datos de Contacto</a></li>
+                <li><a href="{{ url_for('redes_sociales')}}">Redes Sociales</a></li>
+                <li><a href="{{ url_for('idiomas')}}">Idiomas</a></li>
+                <li><a href="{{ url_for('intereses')}}">Intereses</a></li>
+                <li><a href="{{ url_for('sobre_mi')}}">Sobre Mí</a></li>
+                <li><a href="{{ url_for('experiencia')}}">Experiencia Profesional</a></li>
+                <li><a href="{{ url_for('educacion')}}">Educación</a></li>
+                <li><a href="{{ url_for('habilidades')}}">Habilidades</a></li>
+                <li><a href="{{ url_for('cursos')}}">Cursos</a></li>
+                <li><a href="{{ url_for('referencias')}}">Referencias</a></li>
+            </ul>
+        </nav>
+        <div class="contenedor-body">
+            {% block body %}
+            {%  endblock %}
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
+        <script>
+            // Espera un instante para asegurar que baguetteBox.js se cargue
+            // y luego lo ejecuta en todos los divs con la clase 'album'
+            window.addEventListener('load', function() {
+                baguetteBox.run('.album');
+                // Si tu div tuviera otra clase, la pones aquí en lugar de '.album'
+            });
+        </script>
+    </body>
+    <footer>
+        <p>Mis redes:</p>
         <ul>
-            <li><a href="#datos_personales">Datos Personales</a></li>
-            <li><a href="#contacto">Datos de Contacto</a></li>
-            <li><a href="#redes_sociales">Redes Sociales</a></li>
-            <li><a href="#idiomas">Idiomas</a></li>
-            <li><a href="#intereses">Intereses</a></li>
-            <li><a href="#sobre_mi">Sobre Mi</a></li>
-            <li><a href="#experiencia">Experiencia Profesional</a></li>
-            <li><a href="#educacion">Educacion</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#cursos">Cursos</a></li>
-            <li><a href="#referencias">Referencias</a></li>
+            <li><a href="https://github.com/IvanDanielEscobar" target="_blank">Mi GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/ivan-daniel-escobar-55493a186/" target="_blank">Mi LinkedIn</a></li>
+            <li><a href="{{ url_for('index')}}">Inicio</a></li>
         </ul>
-    </nav>
-    {% block body %}
-    {%  endblock %}
-</body>
-<footer>
-    <p>Mis redes:</p>
-    <ul>
-        <li><a href="https://github.com/IvanDanielEscobar" target="_blank">Mi GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/ivan-daniel-escobar-55493a186/" target="_blank">Mi LinkedIn</a></li>
-    </ul>
-</footer>
-</html>
+    </footer>
+    </html>
