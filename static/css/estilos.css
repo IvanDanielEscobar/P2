@@ -1,3 +1,4 @@
+/* estilos globales*/
 :root {
     --color-bg-body: rgb(2, 3, 53); /*fondo principal*/
     --color-bg-nav-footer: rgb(0, 8, 80); /*fondo del nav/footer*/
@@ -54,101 +55,270 @@
 
     /* Bordes y Sombras */
     --border-radius-card: 8px;        /* Radio de borde para tarjetas */
-    --border-card: 1px solid var(--color-border); /* Borde estándar de tarjeta */
+    --border-card: 1px solid var(--color-border); /* Borde estandar de tarjeta */
     --box-shadow-card: 0 2px 5px var(--color-shadow); /* Sombra estándar tarjeta */
 }
 
-/*estilo general para mi body */
-body {
-    line-height: var(--line-height-base);
+/* Clase para ocultar visualmente pero mantener accesible */
+.ocultar {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; /* Evita solapamientos */
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+    border: 0;
+}
+
+/* Reset Básico para evitar inconsistencias entre navegadores no es obligatorio*/
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Hace que padding y border no aumenten el tamaño total del elemento */
+}
+
+body {
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+ul {
+    list-style: none; /* Quita los puntos de las listas */
+}
+
+a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: inherit; /* Hace que los enlaces hereden el color del texto padre por defecto */
+}
+
+img {
+    max-width: 100%; /* Asegura que las imágenes no se desborden de su contenedor */
+    display: block; /* Evita espacios extra debajo de las imagenes */
+}
+
+/* estilos generales del body */
+body {
     background-color: var(--color-bg-body);
     font-family: var(--font-family-base);
-    color: var(--color-text-light-medium);
+    color: var(--color-text-light-medium); /* Color de texto por defecto */
+    font-size: var(--font-size-base); /* Tamaño base definido en variables */
+    line-height: var(--line-height-base); /* Interlineado base */
 }
 
+/* estilos generales de encabezados */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-headings);
-    margin-top: 0;
+    color: var(--color-text-light); /* Color claro principal para titulos */
+    margin-top: var(--spacing-xl); /* Espacio arriba  */
+    margin-bottom: var(--spacing-md); /* Espacio abajo  */
+    line-height: 1.3; /* Interlineado más ajustado para títulos */
 }
 
-.contenedor-body {
-    width: 100%; /* Asegura que use el ancho disponible hasta el máximo */
-    max-width: var(--container-max-width); /* Ancho máximo del contenido (puedes ajustar este valor: 1000px, 1200px...) */
-    margin-left: auto;  /* Centra el contenedor horizontalmente */
-    margin-right: auto; /* Centra el contenedor horizontalmente */
-    padding-left: var(--container-padding-h); /* Espacio interno para que el contenido no toque los bordes */
-    padding-right: var(--container-padding-h);/* Espacio interno para que el contenido no toque los bordes */
-    padding-bottom: var(--container-padding-v);
-    background-color: --color-bg-container; /* Fondo  para el contenido */
-    color: var(--color-text-light); /* Color de texto por defecto para TODO dentro del contenedor */
-    box-shadow: var(--varbox-shadow-container);
-    border-radius: var(--border-radius-card);
-    margin-top: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+h1 {
+    font-size: var(--font-size-h1); 
+}
+h2 {
+    font-size: var(--font-size-h2-section);
+}
+h3 {
+    font-size: var(--font-size-h3-section);
+}
+h4 {/* Usando h3-card para h4 */
+    font-size: var(--font-size-h3-card);
+} 
+
+
+/* estilos generales de enlaces */
+a {
+    color: var(--color-link);
 }
 
-/*estilos base para las secciones */
-section {
-    padding-top: var(--spacing-section-v);
-    padding-bottom: var(--spacing-section-v);
-    margin: 0;
-    border-top: 1px solid var(--color-border-separator);
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline; 
 }
 
-section:first-of-type {
-    border-top: none; /*no poner borde a la primera seccion */
+/* estilo del contenedor principal */
+main.contenedor-body {
+    width: 95%; /* Ocupa casi todo el ancho, pero deja un margen */
+    max-width: var(--container-max-width); /* Ancho maximo definido en variables */
+    margin: var(--spacing-xl) auto; /* margen arriba/abajo y centrado horizontal */
+    padding: var(--container-padding-v) var(--container-padding-h); /* Padding vertical y horizontal */
+    background-color: var(--color-bg-container); 
+    color: var(--color-text-light); /* Color de texto por defecto  */
+    border-radius: var(--border-radius-card); /* Bordes redondeados */
+    box-shadow: var(--box-shadow-card); 
 }
 
-/*estilo base para h1 dentro de cualquier seccion */
-/* > para seleccionar solo el h1 principal de la seccion */
-section > h1 {
-    font-size: var(--font-size-h1);
+/* espaciado entre secciones principales (div hijos de main) */
+main.contenedor-body > div {
+    margin-bottom: var(--spacing-section-v); /* Usa la variable de espaciado vertical de sección */
+    padding: var(--spacing-section-v) var(--spacing-section-h); 
+}
+
+/* Quitar el margen inferior de la ultima seccion */
+main.contenedor-body > div:last-child {
+    margin-bottom: 0;
+}
+
+/* estilos menu de navegacion   */
+.menu-navegacion { 
+    background-color: var(--color-bg-nav-footer);
+    padding: var(--spacing-md) var(--spacing-xxl); /* Espaciado interno */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Título a la izquierda, lista a la derecha */
+}
+/* estilo para el H3 dentro del menu */
+.menu-navegacion h3 {
     color: var(--color-text-light);
-    margin-bottom: var(--spacing-xl);
-    text-align: center;
-}
-
-/* estilo menu de navegacion */
-nav {
-    background-color: var(--color-bg-nav-footer); /* coor de fondo del menu de navegacion */
-    padding: var(--spacing-md) var(--spacing-xxl); /*deffine el espaciointerno de todo el nav */
-    /* flexbox */
-    display: flex; /* convierte el nav en contenedor flex*/
-    align-items: center; /* alinea h3 y ul al centro, si uno es mas alto que el otro se centraran entre si */
-    justify-content: space-between; /* h3 a la izq y ul a la derecha*/ 
-}
-/* estilo para el h3 adentro del nav*/
-nav h3 {
-    color: var(--color-text-light);
-    /* quito los margenes para que flex box lo controle dejarlos puede ocacionar errores*/
-    margin: 0; /* orden arriba derecha abajo izquierda */
-    padding: 0; /*quito relleno*/
+    margin: 0; 
+    padding: 0;
     font-size: 1.5em;
 }
-/* esstilo para la lista entera */
-nav ul {
-    list-style: none; 
+/* estilo para la lista UL del menu */
+.menu-navegacion ul {
+    list-style: none;
     margin: 0;
     padding: 0;
 }
-/* estilo para cada li dentro de la ul*/
-nav li {
-    display: inline-block; /* para que mi li se ponga en horizontal */
-    margin: 0 0 0 var(--spacing-md); /*espacio entre los a de mi lista */
+/* estilo para cada LI de la UL */
+.menu-navegacion li {
+    display: inline-block; 
+    margin: 0 0 0 var(--spacing-md); 
 }
-nav li:first-child { /* :first-child esta clase se aplica al elemento que viene justo antes (en este caso es li)
-    y añade la codicion seleccionar el elemento(li) solo si es el primer hijo de su elemento padre (ul), es decir, anula su estilo general unicamente al primer elemento */
-    margin-left: 0; /* margin-left quita el margen del primer elemento de la lista*/
+/* quitar margen izquierdo del primer LI */
+.menu-navegacion li:first-child {
+    margin-left: 0;
 }
-/* estilo para los enlaces a dentro de cada li */
-nav li a {
+/* estilo para los enlaces A dentro de cada LI */
+.menu-navegacion li a {
     color: var(--color-text-light);
-    text-decoration: none; /* quita el subrayado */
-    font-weight: bold; /* pone el texto en negrita */
+    font-weight: bold; 
+    padding: var(--spacing-xs) var(--spacing-sm);
+    display: inline-block; 
+    border-radius: 4px; 
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transición suave para el hover */
 }
-/* estilo para nav li a cuando el puntero este encima del enlace*/
-nav li a:hover { /* es una clase que aplica si el puntero esta encima de un elemento */
+/* estilo para el hover de los enlaces */
+.menu-navegacion li a:hover {
+    color: var(--color-text-dark); 
+    background-color: var(--color-link-hover); 
+}
+
+/* estilos footer */
+footer {
+    background-color: var(--color-bg-nav-footer); 
     color: var(--color-text-light-medium);
+    padding: var(--spacing-lg) var(--spacing-xxl);
+    margin-top: var(--spacing-xxl); 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* empuja el contenido (texto + lista) a la derecha */
+}
+footer p {
+    margin: 0; /* Quitar margenes por defecto */
+    margin-right: var(--spacing-md); /* espacio entre el texto y la lista */
+    color: var(--color-text-light); /* texto principal claro */
+    font-weight: bold;
+}
+/* lista UL de enlaces */
+footer ul {
+    margin: 0;
+    padding: 0;
+}
+/* Items LI de la lista */
+footer li {
+    display: inline-block; 
+    margin-left: var(--spacing-md); 
+}
+footer li a {
+    color: var(--color-text-light-soft); 
+    display: inline-block; 
+    padding: var(--spacing-xs) var(--spacing-sm); 
+    border-radius: 4px; 
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transición suave */
+}
+/* Hover de los enlaces A  */
+footer li a:hover {
+    background-color: var(--color-link-hover); 
+    color: var(--color-text-dark); 
+}
+
+/* estilos datos personales */
+.contenedor-datos {
+    display: flex; 
+    align-items: center; 
+    gap: var(--spacing-xxl);
+    /* Centrar este contenedor específico si quieres que sea más estrecho */
+    max-width: 800px; /* Ancho maximo para esta seccion especffica */
+    margin-left: auto; /* Centra el contenedor si tiene max-width */
+    margin-right: auto; /* Centra el contenedor si tiene max-width */
+}
+/* estilo para la imagen dentro de .contenedor-datos */
+.contenedor-datos img {
+    width: 180px; /* Ancho fijo para la imagen */
+    height: 180px;
+    object-fit: cover; 
+    border-radius: 20%; 
+    border: 3px solid var(--color-border);
+    flex-shrink: 0; /* Evita que la imagen se encoja si no hay espacio */
+}
+/* estilo para los parrafos dentro de .texto-datos */
+.contenedor-datos .texto-datos p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm); 
+}
+/* Quitar margen inferior del ultimo parrafo dentro de .texto-datos */
+.contenedor-datos .texto-datos p:last-child {
+    margin-bottom: 0;
+}
+/* Estilo para las etiquetas <strong> dentro de los parrafos */
+.contenedor-datos .texto-datos p strong {
+    color: var(--color-text-light-medium); 
+    margin-right: var(--spacing-xs); 
+}
+
+/* Estilos Sección Sobre Mí     */
+/* Centrar el título H2 de esta sección */
+.contenedor-sobremi h2 {
+    text-align: center;
+}
+/* Estilo para el párrafo dentro de Sobre Mí */
+.contenedor-sobremi p {
+    line-height: var(--line-height-paragraph); 
+    max-width: 1000px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 0; 
+    text-align: center; 
+}
+
+/* Estilos Sección Contacto */
+.contenedor-contacto {
+    text-align: center;
+}
+.contenedor-contacto .iconos-contacto {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: var(--spacing-lg); 
+    margin-top: var(--spacing-md); 
+}
+.contenedor-contacto .iconos-contacto li a {
+    color: var(--color-link); 
+    font-size: 2em; 
+    padding: var(--spacing-sm); 
+    display: inline-block; 
+    border-radius: 50%; 
+    width: 60px; 
+    height: 60px;
+    line-height: calc(60px - 2 * var(--spacing-sm)); 
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+.contenedor-contacto .iconos-contacto li a:hover {
+    color: var(--color-text-dark); /* Color del icono en hover */
+    background-color: var(--color-link-hover); /* Fondo en hover */
+    transform: scale(1.1); /* Efecto de zoom ligero en hover */
 }
