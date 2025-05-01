@@ -158,8 +158,9 @@ main.contenedor-body {
     "exp datos edu"     /* fila 1 */
     "exp sobremi edu"   /* fila 2 */
     "exp contacto hab"    /* fila 3 */
-    "exp redes    hab";     /* fila 4 */
+    "soft redes    hab";     /* fila 4 */
     gap: var(--spacing-md);/*espacio entre las areas*/
+    row-gap: var(--spacing-sm);
     padding: var(--spacing-md);
 }
 /* padding interno para las secciones en el grid */
@@ -651,6 +652,7 @@ footer li a:hover {
 .contenedor-contacto {
     grid-area: contacto;
     text-align: center;
+    padding-bottom: 0;
 }
 .contenedor-contacto .iconos-contacto {
     display: flex;
@@ -658,6 +660,7 @@ footer li a:hover {
     flex-wrap: wrap; 
     gap: var(--spacing-lg); 
     margin-top: var(--spacing-md); 
+    margin-bottom: 0;
 }
 .contenedor-contacto .iconos-contacto li a {
     color: var(--color-link); 
@@ -681,6 +684,7 @@ footer li a:hover {
 .contenedor-redes-sociales {
     grid-area: redes;
     text-align: center;   
+    padding-top: 0;
 }
 /* estilo para el párrafo "Mis redes personales:" */
 .contenedor-redes-sociales p {
@@ -699,12 +703,12 @@ footer li a:hover {
 .contenedor-redes-sociales .lista-redes li a {
     color: var(--color-link);
     font-size: 1.6em; 
-    padding: var(--spacing-xs); 
+    padding: var(--spacing-sm); 
     display: inline-block;
     border-radius: 50%;
-    width: 45px; /* tamaño del boton */
-    height: 45px; /* tamaño del boton */
-    line-height: calc(45px - 2 * var(--spacing-xs)); 
+    width: 60px; /* tamaño del boton */
+    height: 60px; /* tamaño del boton */
+    line-height: calc(60px - 2 * var(--spacing-sm)); 
     text-align: center; /* Centrado horizontal del icono */
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
@@ -851,4 +855,39 @@ footer li a:hover {
 .contenedor-habilidades .habilidades-blandas li strong {
     color: var(--color-text-light);
     margin-right: var(--spacing-xs);
+}
+
+
+/* Contenedor principal de la sección Software */
+.contenedor-software {
+    grid-area: soft;
+    text-align: center;
+}
+
+.contenedor-software h2 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Contenedor específico para los iconos */
+.contenedor-software .iconos-software {
+    display: flex;          /* Usa Flexbox para alinear iconos */
+    flex-wrap: wrap;        /* Permite que los iconos pasen a la siguiente línea si no caben */
+    justify-content: center;/* Centra los iconos horizontalmente */
+    align-items: center;    /* Centra los iconos verticalmente si hay varias líneas */
+    gap: var(--spacing-xl);
+    padding: var(--spacing-sm) 0; 
+}
+/* estilos software */
+.contenedor-software .iconos-software i {
+    font-size: 3.5em; /* Tamaño del icono (ajusta a tu gusto) */
+    color: var(--color-text-light-medium); /* Color del icono (puedes usar --color-link) */
+    width: 60px; /*Fija un ancho si prefieres */
+    text-align: center; /* Asegura centrado si fijaste ancho */
+    transition: color 0.2s ease, transform 0.2s ease; /* Transición suave para hover */
+}
+/* Efecto al pasar el ratón por encima (opcional) */
+.contenedor-software .iconos-software i:hover {
+    color: var(--color-link-hover); /* Cambia color en hover */
+    transform: scale(1.15); /* Agranda un poco el icono en hover */
 }
