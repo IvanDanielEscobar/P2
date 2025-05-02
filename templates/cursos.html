@@ -1,48 +1,46 @@
-
-
 {% extends 'layout.html' %}
-
+{%block body_class%}pagina-cursos{%endblock%}
 {% block tittle %}
-Ivan Escobar - Intereses
+Ivan Escobar - Cursos
 {% endblock %}
-
 {% block body %}
-<h1>Cursos</h1>
+<div class="contenedor-cursos">
+    <h2>cursos y capacitaciones</h2> 
 
-<div class="cursos">
-    <article>
-        <h2>Curso de Reparacion de PC</h2>
-        <p>Institución: Instituto Tecnologico Rio Cuarto, Año 2019</p>
-    </article>
-</div>
+    <table class="tabla-cursos">
+        <thead> 
+            <tr> 
+                <th scope="col">nombre del curso</th>
+                <th scope="col">institucion / plataforma</th>
+                <th scope="col">año</th> 
+                <th scope="col">certificado</th> 
+            </tr>
+        </thead>
+        <tbody> 
+            <tr>
+                <td>introduccion a python</td> 
+                <td>plataforma ejemplo</td>
+                <td>2024</td>
+                <td><a href="/ruta/a/tu/certificado1.pdf" target="_blank">ver</a></td> {# =jemplo con enlace #}
+            </tr>
+        
+            <tr>
+                <td>herramientas ofimaticas</td>
+                <td>itecriocuarto</td>
+                <td>2023</td>
+                <td>si</td> 
+            </tr>
+           
+            <tr>
+                <td>otro curso importante</td>
+                <td>institucion abc</td>
+                <td>2022</td>
+                <td>no</td>
+            </tr>
 
-<h3>Otras Capacitaciones</h3>
 
-<div class="capacitaciones">
-    <article>
-        <h4>Taller de Fotografia</h4>
-        <p>Brindado por Valeria Caballero, realizado en Mariquita Sanchez de Thompson en el año 2013</p>
-    </article>
-
-    <article>
-        <h4>Taller de Economia PErsonal</h4>
-        <p>Brindado por Junior Achievement, realizado en Instituto Superior Jeronimo Luis de Cabrera en el año 2017</p>
-    </article>
-
-    <article>
-        <h4>Taller de Fotografia Profesional</h4>
-        <p>Brindado por Belen Juarez, realizado en Instituto Tecnologico Rio Cuarto</p>
-    </article>
-
-    <article>
-        <h4>Carnet de Conducir A3</h4>
-        <p>Vencimiento 04/02/2027</p>
-    </article>
-
-    <article>
-        <h4>Carnet de Conducir B2</h4>
-        <p>Vencimiento 04/02/2027</p>
-    </article>
+        </tbody>
+    </table>
 </div>
 
 {% endblock %}

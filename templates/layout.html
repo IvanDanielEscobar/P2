@@ -11,14 +11,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" integrity="sha512-NVt7pmp2VRंशिकvkYAkwn+37G4wnpGDN6cVYZtVNXknnQJsKQrEUoLpHHC2m4cURwEszQIlN05G6zh7PyM1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>{% block title %}{% endblock %}</title>
     </head>
-    <body>
+    <body class="{%block body_class%}{%endblock%}">
         <nav class="menu-navegacion">
             <h3>Mi Curriculum</h3>
             <ul>
                 <li><a href="{{ url_for('datos_personales')}}">Datos Personales</a></li>
                 <li><a href="{{ url_for('contacto')}}">Datos de Contacto</a></li>
                 <li><a href="{{ url_for('redes_sociales')}}">Redes Sociales</a></li>
-                <li><a href="{{ url_for('idiomas')}}">Idiomas</a></li>
+                <li><a href="{{ url_for('idiomas')}}">Idioma y software</a></li>
                 <li><a href="{{ url_for('intereses')}}">Intereses</a></li>
                 <li><a href="{{ url_for('sobre_mi')}}">Sobre Mí</a></li>
                 <li><a href="{{ url_for('experiencia')}}">Experiencia Profesional</a></li>
@@ -34,23 +34,16 @@
         </main>
         
         <footer>
-            <p>Mis redes:</p>
+            <p>Ivan Escobar. 2025</p>
             <ul>
-                <li><a href="https://github.com/IvanDanielEscobar" target="_blank">Mi GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/ivan-daniel-escobar-55493a186/" target="_blank">Mi LinkedIn</a></li>
-                <li><a href="{{ url_for('index')}}">Inicio</a></li>
+                <a href="https://wa.me/5493586000456" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> {# Ícono de wasap#}
+                </a>
+                <li>
+                    <a href="{{ url_for('index')}}">Inicio</a>
+                </li>
             </ul>
         </footer>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
-        <script>
-            // Espera un instante para asegurar que baguetteBox.js se cargue
-            // y luego lo ejecuta en todos los divs con la clase 'album'
-            window.addEventListener('load', function() {
-                baguetteBox.run('.album');
-                // Si tu div tuviera otra clase, la pones aquí en lugar de '.album'
-            });
-        </script>
-
     </body>
     </html>

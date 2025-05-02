@@ -1,25 +1,30 @@
 {% extends 'layout.html' %}
-
+{%block body_class%}pagina-habilidades{%endblock%}
 {% block tittle %}
-Ivan Escobar - Intereses
+Ivan Escobar - Habilidades
 {% endblock %}
 
 {% block body %}
-<h1>Habilidades</h1>
 <div class="contenedor-habilidades">    
-    <div class="habilidades-tecnicas">
-       <h2>Habilidades Técnicas</h2>
-       <ul>
-           <li>Amplia experiencia en hardware de computadoras (componentes, arquitecturas, ensamblaje/desensamblaje).</li>
-       </ul>
+    <h1 class="ocultar">Habilidades</h1>
+    <div class="contenedor-software">
+        <h2>Software:</h2>
+        <div class="iconos-software">
+            <i class="fab fa-linux" title="Linux / Ubuntu"></i>
+            <i class="fab fa-html5" title="HTML5"></i>
+            <i class="fab fa-css3-alt" title="CSS3"></i>
+            <i class="fab fa-js" title="JavaScript"></i>
+            <i class="fab fa-python" title="Python"></i>
+            <i class="fas fa-code" title="Visual Studio Code"></i>
+        </div>
     </div>
     <div class="habilidades-blandas">
-        <h2>Habilidades Blandas</h2>
+        <h3>Habilidades Blandas</h3>
         <ul>
-            <li>Comprension rapida: Entendimiento ágil de nuevos procesos y flujos de trabajo.</li>
-            <li>Rapido Aprendizaje: Compresión y realización eficaz de nuevas tareas asignadas.</li>
-            <li>Trabajo en Equipo: Comunicación abierta y eficaz para resolver problemas.</li>
-            <li>Autonomia: Capacidad para asumir y cumplir responsabilidades de forma independiente.</li>
+            <li><strong>Comprension rapida:</strong> Entendimiento ágil de nuevos procesos y flujos de trabajo.</li>
+            <li><strong>Rapido Aprendizaje:</strong> Compresión y realización eficaz de nuevas tareas asignadas.</li>
+            <li><strong>Trabajo en Equipo:</strong> Comunicación abierta y eficaz para resolver problemas.</li>
+            <li><strong>Autonomia:</strong> Capacidad para asumir y cumplir responsabilidades de forma independiente.</li>
         </ul>
     </div>
 </div>

@@ -83,9 +83,8 @@
     padding: 0;
     box-sizing: border-box; /* Hace que padding y border no aumenten el tamaño total del elemento */
 }
-
-body {
-    line-height: 1.6; /* Mejora la legibilidad del texto */
+html {
+    height: 100%;
 }
 
 ul {
@@ -104,12 +103,15 @@ img {
 
 /* estilos generales del body */
 body {
+    min-height: 100%;       /* para que ocupe al menos toda la pantalla */
+    display: flex;          /* flexbox */
+    flex-direction: column;/* apila nav, main, footer verticalmente */
     background-color: var(--color-bg-body);
     font-family: var(--font-family-base);
     color: var(--color-text-light-medium); /* Color de texto por defecto */
     font-size: var(--font-size-base); /* Tamaño base definido en variables */
     line-height: var(--line-height-base); /* Interlineado base */
-}
+    }
 
 /* estilos generales de encabezados */
 h1, h2, h3, h4, h5, h6 {
@@ -162,6 +164,7 @@ main.contenedor-body {
     gap: var(--spacing-md);/*espacio entre las areas*/
     row-gap: var(--spacing-sm);
     padding: var(--spacing-md);
+    flex-grow: 1;
 }
 /* padding interno para las secciones en el grid */
 main.contenedor-body > div {
@@ -880,7 +883,7 @@ footer li a:hover {
 }
 /* estilos software */
 .contenedor-software .iconos-software i {
-    font-size: 3.5em; /* Tamaño del icono (ajusta a tu gusto) */
+    font-size: 2.5em; /* tamaño del icono */
     color: var(--color-text-light-medium); /* Color del icono (puedes usar --color-link) */
     width: 60px; /*Fija un ancho si prefieres */
     text-align: center; /* Asegura centrado si fijaste ancho */
@@ -890,4 +893,534 @@ footer li a:hover {
 .contenedor-software .iconos-software i:hover {
     color: var(--color-link-hover); /* Cambia color en hover */
     transform: scale(1.15); /* Agranda un poco el icono en hover */
+}
+
+
+/* --- estilos personalizados para la pagina datos personales --- */
+.pagina-datos-personales main.contenedor-body {
+    display: block;
+    grid-template-columns: none;
+    grid-template-areas: none;
+    gap: 0;
+    padding: var(--spacing-xl);
+}
+.pagina-datos-personales .contenedor-datos {
+    padding: var(--spacing-xl); 
+     max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    text-align: left;
+}
+.pagina-datos-personales .contenedor-datos img {
+    border-radius: 50%; 
+    border-width: 5px;
+    flex-shrink: 0; /*evita que la imagen se encoja si no hay espacio*/ 
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /*evita distorsion*/
+}
+.pagina-datos-personales .contenedor-datos .texto-datos {
+    text-align: left;
+    max-width: 700px;
+}
+.pagina-datos-personales .contenedor-datos .texto-datos p {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-sm); 
+    line-height: var(--line-height-paragraph);
+    color: var(--color-text-light); 
+}
+.pagina-datos-personales .contenedor-datos .texto-datos p strong {
+    color: var(--color-text-light-medium);
+    margin-right: var(--spacing-xs);
+}
+.pagina-datos-personales .contenedor-datos .texto-datos p:last-child {
+    margin-bottom: 0;
+}
+.pagina-datos-personales h1 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-h1);
+    color: var(--color-text-light);
+    max-width: 1400px; /* el mismo ancho maximo que .contenedor-datos */
+    margin-left: auto;  
+    margin-right: auto; 
+    margin-top: var(--spacing-lg);
+}
+
+
+/* --- Estilos para pagina-contacto --- */
+.pagina-contacto main.contenedor-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: none;
+    grid-template-areas: none;
+    gap: 0;
+    padding: var(--spacing-xl);
+}
+.pagina-contacto .contenedor-datos-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xxl);
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.pagina-contacto .contenedor-datos-contacto h1 {
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-size-h1);
+    color: var(--color-text-light);
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.pagina-contacto .contenedor-datos-contacto .contenedor-contacto {
+    margin: 0;
+    padding: 0;
+}
+.pagina-contacto .iconos-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 6rem;
+    align-items: center;
+}
+.pagina-contacto .iconos-contacto li a {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-decoration: none;
+    color: var(--color-text-light-soft);
+    width: 70px; /* Ancho del circulo */
+    height: 70px; /* Alto del circulo */
+    border-radius: 50%; /* Hace el enlace circular */
+    background-color: transparent; /* Fondo transparente por defecto */
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Transicion completa */
+}
+
+.pagina-contacto .iconos-contacto li a i {
+    font-size: 2.8em;
+}
+
+.pagina-contacto .iconos-contacto li a:hover, .pagina-contacto .iconos-contacto li a:focus {
+    color: var(--color-bg-card);
+    background-color: var(--color-bg-body);
+    transform: scale(1.15);
+    outline: none;
+}
+
+
+/* --- Estilos para pagina-redes-sociales  --- */
+.pagina-redes-sociales main.contenedor-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centra la lista ul horizontalmente */
+    justify-content: center;  /* centra la lista ul verticalmente */
+    grid-template-columns: none;
+    grid-template-areas: none;
+    gap: 0;
+    padding: var(--spacing-xl);
+}
+
+.pagina-redes-sociales .lista-redes {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* el main ya la centra */
+    display: flex;
+    flex-wrap: nowrap; /* forza una linea */
+    justify-content: center;
+    gap: 6rem; 
+    align-items: center;
+    width: fit-content;
+}
+.pagina-redes-sociales .lista-redes li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--color-text-light-soft);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+.pagina-redes-sociales .lista-redes li a i {
+    font-size: 2.8em;
+}
+.pagina-redes-sociales .lista-redes li a:hover,
+.pagina-redes-sociales .lista-redes li a:focus {
+    color: var(--color-bg-card); 
+    background-color: var(--color-bg-body); 
+    transform: scale(1.15);
+    outline: none;
+}
+
+
+/* --- estilos para pagina idiomas */
+.pagina-idiomas main.contenedor-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centra la lista ul horizontalmente */
+    justify-content: center;  /* centra la lista ul verticalmente */
+    gap: 2rem;
+    padding: var(--spacing-xl);
+}
+.contenido-idiomas .contenido-idiomas ul {
+    list-style: none; 
+    padding-left: 0;  
+    margin: 0;        
+    text-align: center; 
+}
+.contenido-idiomas li {
+    margin-bottom: 0.5em; /* pequeño espacio por si agrego mas idiomas */
+    font-size: var(--font-size-base);   
+}
+.contenido-idiomas li strong {
+    color: var(--color-link-hover);
+    margin-left: 0.5em;
+}
+/* --- estilos para intereses --- */
+.pagina-intereses main.contenedor-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centra la lista ul horizontalmente */
+    justify-content: center;  /* centra la lista ul verticalmente */
+    gap: 2rem;
+    padding: var(--spacing-xl);
+}
+/* Añade esto a tus estilos para la página de intereses */
+.contenedor-intereses h1 {
+    margin-bottom: 2.5rem; 
+}
+.iconos-intereses {
+    list-style: none; 
+    padding: 0;   
+    margin-top: 2.5rem; 
+}
+.iconos-intereses li {
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    display: flex; 
+    align-items: center;
+    color: var(--color-link);
+}
+.iconos-intereses li i {
+    margin-right: 10px; 
+    font-size: 2.4rem;
+}
+
+/* --- estilos pagina-sobremi --- */
+.pagina-sobremi main.contenedor-body{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: var(--spacing-l) var(--spacing-m);
+    min-height: calc(100vh - var(--header-height, 60px) - var(--footer-height, 40px)); 
+}.contenedor-pagina-sobremi {
+    display: block;     
+    max-width: 900px;
+    width: 90%;
+    text-align: center;
+}
+.contenedor-pagina-sobremi h1 {
+    margin-bottom: 1.5rem; 
+}
+.contenedor-sobremi {
+    margin-bottom: 2rem;  
+}
+.contenedor-pagina-sobremi h2 {
+    margin-bottom: 1.5rem; 
+}
+.album {
+    display: grid;  
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--gap-grid); 
+    margin-top: var(--spacing-xl); 
+    text-align: left; 
+}
+
+.album a {
+    display: block; /* Convierte el enlace en un contenedor tipo */ 
+    overflow: hidden; /* Esconde cualquier parte de la imagen que se salga */
+    /* Define la forma/proporción de cada item de la galería  */
+    aspect-ratio: 1 / 1; /* cuadrado */
+    border-radius: var(--border-radius-card); 
+}
+
+.album img {
+    display: block; 
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;  
+    transition: transform 0.3s ease;
+}
+.album a:hover img {
+    transform: scale(1.05);
+}
+
+/*--- estilo pagina-experiencias ---*/
+.pagina-experiencia main.contenedor-body { 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;  
+    padding: var(--spacing-l) var(--spacing-m);
+    min-height: calc(100vh - var(--header-height, 60px) - var(--footer-height, 40px)); 
+}
+.pagina-experiencia .experiencia-lista {
+    width: 100%;
+    box-sizing: border-box; /*incluye padding/border en el ancho si se añaden*/
+}
+.pagina-experiencia .contenedor-experiencia {
+    margin-top: 110px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.pagina-experiencia .experiencia-lista article {
+    background-color: var(--color-bg-card);    
+    border: 1px solid var(--color-border);     
+    border-radius: var(--border-radius-card);  
+    padding: var(--spacing-lg);                
+    margin-bottom: var(--spacing-xl);          
+    overflow: auto;                            
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  
+    box-sizing: border-box;    /* Asegura que padding/border no agranden la tarjeta */
+}
+.pagina-experiencia .experiencia-lista article:last-child {
+    margin-bottom: 0;
+}
+.pagina-experiencia .experiencia-lista article h3 {
+    margin-top: 0; 
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-s);
+    margin-bottom: var(--spacing-xl);
+}
+
+.pagina-experiencia .experiencia-lista article p {
+    margin-bottom: var(--spacing-s); 
+    line-height: var(--line-height-paragraph);               
+}
+.pagina-experiencia .experiencia-lista article p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- estilos para pagina-educacion --- */
+.pagina-educacion main.contenedor-body { 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;  
+    padding: var(--spacing-l) var(--spacing-m);
+    min-height: calc(100vh - var(--header-height, 60px) - var(--footer-height, 40px)); 
+}
+
+.pagina-educacion .educacion-lista {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pagina-educacion .contenedor-educacion {
+    margin-top: 110px; /* Quizás necesites ajustar este margen para la página de educación */
+    width: 100%;
+    box-sizing: border-box;
+}
+.pagina-educacion .educacion-lista article {
+    background-color: var(--color-bg-card);    
+    border: 1px solid var(--color-border);     
+    border-radius: var(--border-radius-card);  
+    padding: var(--spacing-lg);                
+    margin-bottom: var(--spacing-xl);          
+    overflow: auto;                            
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  
+    box-sizing: border-box;
+}
+.pagina-educacion .educacion-lista article:last-child {
+    margin-bottom: 0;
+}
+.pagina-educacion .educacion-lista article h3 {
+    margin-top: 0; 
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-s);
+    margin-bottom: var(--spacing-xl);
+}
+.pagina-educacion .educacion-lista article p {
+    margin-bottom: var(--spacing-s); 
+    line-height: var(--line-height-paragraph);
+}
+.pagina-educacion .educacion-lista article p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* --- estilos para pagina-habilidades --- */
+.pagina-habilidades main.contenedor-body { 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    padding: var(--spacing-l) var(--spacing-m); 
+    min-height: calc(100vh - var(--header-height, 60px) - var(--footer-height, 40px)); 
+}
+.pagina-habilidades .contenedor-software h2 {
+    text-align: center; 
+    margin-bottom: 1.5rem; /* espacio entre titulo e iconos */
+}
+.pagina-habilidades .iconos-software {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 1.5rem 2rem; 
+    padding: 1rem 0; 
+}
+.pagina-habilidades .iconos-software i {
+    font-size: 3rem; /* Aumentar el tamaño de los iconos */
+    color: var(--color-link); /* Definir un color base */
+    transition: transform 0.2s ease-in-out, color 0.2s ease; /* Para efecto hover suave */
+}
+.pagina-habilidades .iconos-software i:hover {
+    transform: scale(1.1); /* Agranda un poco el icono al pasar el mouse */
+    color: var(--color-link-hover); /* Cambia el color al pasar el mouse */
+    cursor: pointer; /* Indica que son interactivos (aunque no tengan link) */
+}
+.pagina-habilidades .contenedor-software {
+    margin-bottom: var(--spacing-xl, 30px);
+    
+}
+/* Estilos para la sección Habilidades Blandas */
+.pagina-habilidades .habilidades-blandas h3 {
+    text-align: center; /* Centrar título H. Blandas */
+    margin-bottom: 1.5rem; /* Espacio debajo del título */
+}
+
+.pagina-habilidades .habilidades-blandas ul {
+    list-style: none; /* Quitar los puntos/bullets de la lista */
+    padding-left: 0; /* Quitar el padding izquierdo por defecto de las listas */
+    margin-top: 0; 
+}
+
+.pagina-habilidades .habilidades-blandas li {
+    margin-bottom: var(--spacing-m, 15px); /* Espacio entre cada habilidad */
+    line-height: 1.6; /* Mejorar legibilidad */
+}
+
+/* Opcional: Estilo para el término strong (el nombre de la habilidad) */
+.pagina-habilidades .habilidades-blandas li strong {
+    display: block; /* Hace que la descripción empiece en una nueva línea */
+    margin-bottom: var(--spacing-xs, 5px); /* Pequeño espacio entre el nombre y la descripción */
+    color: var(--color-accent); /* Opcional: usar un color de acento si lo tienes */
+}
+
+/* --- estilos pagina-cursos --- */
+.pagina-cursos main.contenedor-body { 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    padding: var(--spacing-l) var(--spacing-m); 
+    min-height: calc(100vh - var(--header-height, 60px) - var(--footer-height, 40px)); 
+}
+.pagina-cursos .contenedor-cursos {
+    margin-top: 110px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.pagina-cursos .contenedor-cursos h2 {
+    text-align: center; /* Centrar título */
+    border-bottom: 1px solid var(--color-border); /* Línea inferior */
+    padding-bottom: var(--spacing-s);       
+    margin-bottom: var(--spacing-xl); /* Espacio antes de la tabla */       
+}
+.pagina-cursos .tabla-cursos {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: var(--spacing-l); 
+    font-size: var(--font-size-base); 
+}
+.pagina-cursos .tabla-cursos th, .pagina-cursos .tabla-cursos td {
+    border: 1px solid var(--color-border-table, var(--color-border)); 
+    padding: var(--spacing-m); /* Espaciado interno en celdas */
+    text-align: left; /* Alineación del texto */
+    vertical-align: top; /* Alineación vertical por si hay celdas con alturas distintas */
+}
+.pagina-cursos .tabla-cursos thead th {
+    background-color: var(--color-bg-header-table, var(--color-bg-card)); /* Color de fondo para encabezado */
+    color: var(--color-text-header-table, var(--color-text)); 
+    font-weight: bold;
+    text-align: center; /* Centrar texto en encabezados */
+}
+
+/* rayas de cebra para las filas del cuerpo (tbody) */
+.pagina-cursos .tabla-cursos tbody tr:nth-child(even) {
+    background-color: var(--color-bg-row-alt, rgba(0, 0, 0, 0.05)); 
+}
+.pagina-cursos .tabla-cursos tbody tr:hover {
+    background-color: var(--color-bg-row-hover, rgba(0, 0, 0, 0.1));
+}
+.pagina-cursos .tabla-cursos td a {
+   color: var(--color-link);
+   text-decoration: underline;
+}
+.pagina-cursos .tabla-cursos td a:hover {
+   color: var(--color-link-hover);
+   text-decoration: none;
+}
+
+/* --- Estilos pagina-referencias --- */
+.pagina-referencias main.contenedor-body { 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    padding: var(--spacing-l) var(--spacing-m); 
+    min-height: calc(100vh - var(--header-height, 60px) - var(--footer-height, 40px)); 
+}
+.pagina-referencias .contenedor-referencias {
+    margin-top: 110px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+.pagina-referencias .contenedor-referencias h1 {
+    text-align: center; 
+    border-bottom: 1px solid var(--color-border); 
+    padding-bottom: var(--spacing-s);       
+    margin-bottom: var(--spacing-xl);        
+}
+ .pagina-referencias .referencias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl, 25px);
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: var(--spacing-l); /* Espacio debajo del titulo/linea */
+ }
+.pagina-referencias .referencias article {
+    background-color: var(--color-bg-card);    
+    border: 1px solid var(--color-border);     
+    border-radius: var(--border-radius-card);  
+    padding: var(--spacing-lg);               
+    overflow: auto;                            
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  
+    box-sizing: border-box;
+    flex: 1 1 300px;/* Permite crecer(1), encoger(1), con base de 300px */
+    min-width: 280px;
+}
+.pagina-referencias .referencias article h2 {
+    margin-bottom: var(--spacing-m); 
+    font-size: var(--font-size-h2-card);
+}
+.pagina-referencias .referencias article p {
+    margin-bottom: var(--spacing-s); 
+    line-height: var(--line-height-paragraph);
+}
+.pagina-referencias .referencias article p:last-child {
+    margin-bottom: 0;
 }
